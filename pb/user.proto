@@ -1,0 +1,28 @@
+syntax = "proto3";
+
+package pb;
+
+service UserService {
+    rpc Info(UserRequest) returns (UserResponse) {}
+	rpc List(UserPageRequest) returns (UserPageResponse) {}
+}
+
+message UserRequest {
+    int64 Id = 1;
+    string Name = 2;
+}
+
+message UserResponse {
+    int64 Id = 1;
+    string Name = 2;
+}
+
+message UserPageRequest {
+    int32 Page = 1;
+    int32 PageNo = 2;
+}
+
+message UserPageResponse {
+    int32 Page = 1;
+    int32 PageNo = 2;
+}
